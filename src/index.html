@@ -27,7 +27,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", async () => {
             // basic OSM Leaflet map
-            let map = L.map('map').setView([39, -98], 4);
+            let map = L.map('map').setView([35.019447, 134.662701], 13);
             L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg', {
                 maxZoom: 19,
                 attribution: '&copy; <a href="http://maps.gsi.go.jp/development/ichiran.html">地理院タイル</a> <a href="https://www.maff.go.jp/j/tokei/porigon/">「筆ポリゴンデータ」（農林水産省）</a>'
@@ -40,7 +40,7 @@
                 header.appendChild(formatter.render())
             }
 
-            const response = await fetch('/test/data/UScounties.fgb');
+            const response = await fetch('/assets/28223_tanba_2021_5.fgb');
             for await (let feature of flatgeobuf.deserialize(response.body, undefined, handleHeaderMeta)) {
                 // Leaflet styling
                 const defaultStyle = {
@@ -70,7 +70,7 @@
                     }
                 })
                     // show some per-feature properties when clicking on the feature
-                    .bindPopup(`<h1>${feature.properties["NAME"]} ${feature.properties["LSAD"]}, ${feature.properties["STATE"]}</h1>`)
+                    .bindPopup(`<h1>${feature.properties["id"]} ${feature.properties["耕地の種類"]}</h1>`)
                     .addTo(map);
             }
         });
