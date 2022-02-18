@@ -70,7 +70,7 @@
                     }
                 })
                     // show some per-feature properties when clicking on the feature
-                    .bindPopup(`<h1>${feature.properties["id"]} ${feature.properties["耕地の種類"]}</h1>`)
+                    .bindPopup(`<h1>${feature.properties["id"]}, ${feature.properties["公開年度"]}, ${feature.properties["調整年度"]}, ${feature.properties["耕地の種類"]}</h1>`)
                     .addTo(map);
             }
         });
