@@ -1,8 +1,8 @@
 name: Build and Deoploy Github Pages
 
 on: [push, pull_request ]
-permissions:
-  actions: read
+env:
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 jobs:
   gh-pages-deploy:
