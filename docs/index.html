@@ -40,7 +40,7 @@
                 header.appendChild(formatter.render())
             }
 
-            const response = await fetch('28223_tanba_2021_5.fgb');
+            const response = await fetch('28301_inagawa_2021_5.fgb');
             for await (let feature of flatgeobuf.deserialize(response.body, undefined, handleHeaderMeta)) {
                 // Leaflet styling
                 const defaultStyle = {
