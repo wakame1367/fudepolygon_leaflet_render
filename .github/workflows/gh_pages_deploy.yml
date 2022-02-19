@@ -9,6 +9,6 @@ jobs:
     - name: Build
       uses: actions/jekyll-build-pages@v1
       with:
-        source: ./src
+        source: ./docs
     - name: Deploy
       uses: actions/deploy-pages@v1
