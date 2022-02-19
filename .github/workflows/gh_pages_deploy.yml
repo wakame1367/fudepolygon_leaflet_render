@@ -2,7 +2,7 @@ name: Build and Deoploy Github Pages
 
 on: [push, pull_request ]
 permissions:
-  id-token: read
+  actions: read
 
 jobs:
   gh-pages-deploy:
