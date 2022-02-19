@@ -1,7 +1,8 @@
+name: Build and Deoploy Github Pages
+
 on:
   push:
-    branches:
-      - master
+
 jobs:
   gh-pages-deploy:
     runs-on: ubuntu-latest
