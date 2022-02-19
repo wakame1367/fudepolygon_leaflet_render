@@ -1,13 +1,13 @@
 name: Build and Deoploy Github Pages
 
-on:
-  push:
+on: [push, pull_request ]
+permissions:
+  id-token: read
 
 jobs:
   gh-pages-deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
     - name: Build
       uses: actions/jekyll-build-pages@v1
       with:
